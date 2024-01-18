@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/g_backgroundforLogin"
+    tools:context=".presentation.fragments.userAuthFragments.AccountOptionFragment">
+
+
+    <ImageView
+        android:id="@+id/imageViewintro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ecommerce3"
+        app:layout_constraintBottom_toTopOf="@id/guidehorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelinetop" />
+
+
+    <TextView
+        android:id="@+id/shop_fav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/andika"
+        android:text="Shop Your Favourties"
+        android:textAlignment="center"
+        android:textColor="@color/g_black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guidelineend"
+        app:layout_constraintStart_toEndOf="@id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@id/guidehorizontal" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/andika"
+        android:text="find your favorites, and click your way to a world of endless choices,Let's get started!"
+        android:textAlignment="center"
+        android:textColor="@color/g_grey200"
+        app:layout_constraintEnd_toStartOf="@id/guidelineend"
+        app:layout_constraintStart_toEndOf="@id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@id/shop_fav" />
+
+    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/register_now"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/g_yellow"
+        android:fontFamily="@font/andika"
+        android:text="@string/register_now"
+        android:textAllCaps="false"
+        android:textColor="@color/g_white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@id/guidelineend"
+        app:layout_constraintStart_toEndOf="@id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@id/guidehorizontal"
+        app:spinning_bar_color="@color/g_white"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp" />
+
+    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/login_in_bttn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/g_white"
+        android:fontFamily="@font/andika"
+        android:text="Log In"
+        android:textAllCaps="false"
+        android:textColor="@color/g_black"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toStartOf="@id/guidelineend"
+        app:layout_constraintStart_toEndOf="@id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@id/register_now"
+        app:spinning_bar_color="@color/g_yellow"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp" />
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:contentDescription="@string/wave"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wave__1_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidehorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

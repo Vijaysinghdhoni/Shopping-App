@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/g_backgroundforLogin"
+    tools:context=".presentation.fragments.userAuthFragments.IntroFragment">
+
+
+    <ImageView
+        android:id="@+id/imageViewintro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ecomeerce_intro_2"
+        app:layout_constraintBottom_toTopOf="@id/siginsignup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelinetop" />
+
+
+    <TextView
+        android:id="@+id/siginsignup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/andika"
+        android:text="@string/your_journey_begins_here"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineend"
+        app:layout_constraintStart_toEndOf="@id/guidelinestart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.550" />
+
+    <TextView
+        android:id="@+id/introText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/andika"
+        android:gravity="center"
+        android:text="@string/welcome_to_seamless_shopping_unleash_the_thrill_of_discovery_find_your_favorites"
+        android:textAlignment="center"
+        android:textColor="@color/g_grey200"
+        app:layout_constraintEnd_toStartOf="@id/guidelineend"
+        app:layout_constraintStart_toEndOf="@id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@id/siginsignup" />
+
+
+    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/get_Started_bttn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/g_yellow"
+        android:fontFamily="@font/andika"
+        android:text="@string/get_started"
+        android:textAllCaps="false"
+        android:textColor="@color/g_white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelinebottom"
+        app:layout_constraintEnd_toStartOf="@id/guidelineend"
+        app:layout_constraintStart_toEndOf="@id/guidelinestart"
+        app:layout_constraintTop_toBottomOf="@id/siginsignup"
+        app:spinning_bar_color="@color/g_white"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp" />
+
+    <ImageView
+        android:id="@+id/wave_img"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:contentDescription="@string/wave"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wave__1_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

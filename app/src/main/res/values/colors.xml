@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="g_gray700">#666666</color>
+    <color name="g_lightgray">#F8F4F4</color>
+    <color name="g_black">#171717</color>
+    <color name="g_grey200">#A6A4A4</color>
+    <color name="g_blue">#000DAE</color>
+    <color name="g_blue_light">#4E56C1</color>
+    <color name="g_white">#F5F8FA</color>
+    <color name="g_greywhite">#D7DCDF</color>
+    <color name="g_dark_blue">#000759</color>
+    <color name="g_blue_gray200">#97AABD</color>
+    <color name="g_backgroundforLogin">#f4f1ed</color>
+    <color name="g_background_profile">#F4F4F4</color>
+    <color name="g_lightblack">#3F3E3E</color>
+    <color name="g_yellow">#E66508</color>
+    <color name="g_yellow_splash">#f6eae3</color>
+    <color name="g_yellow200">#E1AD87</color>
+    <color name="g_light_red">#B67676</color>
+    <color name="g_red">#D40A0A</color>
+    <color name="g_light_voilate">#8F7AC2</color>
+    <color name="g_voilate">#3405A6</color>
+    <color name="g_search_bck">#F4F7F8</color>
+    <color name="g_transperent">#CBDCCB</color>
+
+    <color name="g_purple">#7609A4</color>
+    <color name="g_lightpurple">#9969AF</color>
+    <color name="g_voiceicondark">#242323</color>
+    <color name="g_voiceiconlight">#272727</color>
+    <color name="g_light_pink">#E1BEE7</color>
+    <color name="g_card_background">#FAFDFF</color>
+    <color name="g_card_background_new">#D4D8DA</color>
+    <color name="g_light_green">#6BDF70</color>
+    <color name="g_mid_red">#F06292</color>
+
+</resources>

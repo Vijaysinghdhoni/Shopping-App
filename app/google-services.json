@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "222872708859",
+    "project_id": "shoppingapp-f9506",
+    "storage_bucket": "shoppingapp-f9506.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222872708859:android:e6faafa4e99d02bb7bb25e",
+        "android_client_info": {
+          "package_name": "com.vijaydhoni.shoppingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT73PmpXa0myAW7rquxs7sQNDBCWA9KXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

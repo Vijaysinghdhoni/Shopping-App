@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/g_white"
+    app:cardCornerRadius="10dp"
+    app:elevation="0dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp"
+        android:background="@color/g_white">
+
+        <ImageView
+            android:id="@+id/img_category"
+            android:layout_width="120dp"
+            android:layout_height="117dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/mens_clothes_collection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_category_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="special Deals"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/img_category"
+            app:layout_constraintTop_toBottomOf="@id/img_category" />
+
+        <ImageView
+            android:id="@+id/img_favorite"
+            android:layout_width="10sp"
+            android:layout_height="17sp"
+            android:layout_marginEnd="14dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/arrow_ic"
+            app:layout_constraintBottom_toBottomOf="@id/tv_category_name"
+            app:layout_constraintEnd_toEndOf="@id/img_category"
+            app:layout_constraintTop_toTopOf="@id/tv_category_name"
+            app:tint="@color/g_black" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

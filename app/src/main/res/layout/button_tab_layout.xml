@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:focusable="true">
+    <com.google.android.material.button.MaterialButton
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/outlinedButton"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/andika"
+        android:textAllCaps="false"
+        tools:text="Home"
+        android:textColor="@color/g_blue"
+        android:textSize="18sp"
+        app:strokeColor="@color/g_blue_gray200"
+
+        />
+</LinearLayout>
+

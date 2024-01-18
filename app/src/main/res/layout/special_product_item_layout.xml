@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="7dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/g_card_background"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/product_img_crd"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/product_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/product_image"
+                tools:src="@drawable/mens_new_coolection" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/andika_new_basic"
+            android:maxLines="2"
+            android:textColor="@color/g_black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/product_img_crd"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Mens new full collection " />
+
+
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/andika_new_basic"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/product_name"
+            app:layout_constraintTop_toBottomOf="@id/product_name"
+            tools:text="Rs2000" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add_to_cart_bttn"
+            android:layout_width="87dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/add_cart_bttn_bg"
+            android:fontFamily="@font/andika_new_basic"
+            android:text="Add to cart"
+            android:textAllCaps="false"
+            android:textColor="@color/g_white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_price" />
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/fav_img_bg"
+            android:contentDescription="@string/favourtie_product_image"
+            android:padding="6dp"
+            android:src="@drawable/favorite_border_ic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

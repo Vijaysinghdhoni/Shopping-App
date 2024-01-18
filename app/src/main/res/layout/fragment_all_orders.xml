@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.setting.AllOrdersFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/veri_guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/veri_guide2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+        app:layout_constraintStart_toEndOf="@id/veri_guide1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/cancel_img"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/cancel_img"
+            android:padding="2dp"
+            android:src="@drawable/cancel_ic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/andika_new_basic"
+            android:text="All Orders"
+            android:textColor="@color/g_black"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+        app:layout_constraintStart_toEndOf="@id/veri_guide1"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/all_orders_rv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+        app:layout_constraintStart_toEndOf="@id/veri_guide1"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        tools:listitem="@layout/all_orders_rv_item_layout" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/emptyCartanimationView"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/noordersanimation" />
+
+
+    <TextView
+        android:id="@+id/no_ordrs_yt"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/andika_new_basic"
+        android:text="No Orders Yet!"
+        android:textAlignment="center"
+        android:textColor="@color/g_black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/emptyCartanimationView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.fragments.shopipingFragments.SearchFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="12dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guide2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/seacrh_view_back"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Search Here" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_view_rv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+
+        <TextView
+            android:id="@+id/category_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Categories"
+            android:textColor="@color/g_black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/search_view_rv" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_rv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/category_txt" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/no_res_found_anim"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/search_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/noresultanimation" />
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

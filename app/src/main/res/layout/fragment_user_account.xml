@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.fragments.setting.UserAccountFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/veri_guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/veri_guide2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/cancel_img"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/cancel_img"
+                android:padding="2dp"
+                android:src="@drawable/cancel_ic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/andika_new_basic"
+                android:text="Edit Profile"
+                android:textColor="@color/g_black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_img"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:src="@color/g_black" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="120dp"
+            app:layout_constraintBottom_toBottomOf="@id/user_img"
+            app:layout_constraintEnd_toEndOf="@id/user_img"
+            app:layout_constraintStart_toStartOf="@id/user_img"
+            app:layout_constraintTop_toTopOf="@id/user_img">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/edit_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/g_blue_light" />
+
+            <ImageView
+                android:id="@+id/update_img"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:contentDescription="@string/update_image"
+                android:padding="1dp"
+                android:src="@drawable/edit_img_ic"
+                app:layout_constraintBottom_toBottomOf="@id/edit_background"
+                app:layout_constraintEnd_toEndOf="@id/edit_background"
+                app:layout_constraintStart_toStartOf="@id/edit_background"
+                app:layout_constraintTop_toTopOf="@id/edit_background" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/andika_new_basic"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/g_black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/user_img"
+            tools:text="User Name" />
+
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/profile_edit_text_background"
+            android:fontFamily="@font/andika_new_basic"
+            android:hint="email"
+            android:maxLines="1"
+            android:paddingStart="8dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="14dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/user_name"
+            tools:text="testnathtest@123gmail.com" />
+
+        <EditText
+            android:id="@+id/first_name_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/profile_edit_text_background"
+            android:fontFamily="@font/andika_new_basic"
+            android:hint="first Name"
+            android:maxLines="1"
+            android:paddingStart="8dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="14dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/email_edit" />
+
+        <EditText
+            android:id="@+id/last_name_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/profile_edit_text_background"
+            android:fontFamily="@font/andika_new_basic"
+            android:hint="last name"
+            android:maxLines="1"
+            android:paddingStart="8dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="14dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/first_name_edit" />
+
+
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/save_bttn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="@color/g_blue"
+            android:fontFamily="@font/andika_new_basic"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/g_white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/last_name_edit" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.fragments.shopipingFragments.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="12dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guide2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+
+        <TextView
+            android:id="@+id/setting_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/andika_new_basic"
+            android:text="Settings"
+            android:textColor="@color/g_black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/edit_usr_info_constr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/setting_toolbar">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/usr_profile_img"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@color/g_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/usr_name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/andika_new_basic"
+                android:maxLines="1"
+                android:textAllCaps="false"
+                android:textColor="@color/g_black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/usr_profile_img"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="User Name here" />
+
+            <TextView
+                android:id="@+id/edit_prsnl_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="edit personal details"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/usr_profile_img"
+                app:layout_constraintTop_toBottomOf="@id/usr_name" />
+
+            <ImageView
+                android:id="@+id/open_usr_profile_arrow"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/arrow_ic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/orders_linear_lay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/edit_usr_info_constr">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/andika_new_basic"
+                android:text="Orders"
+                android:textColor="@color/g_black"
+                android:textSize="19sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/all_ordr_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/profile_back"
+                    android:padding="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/all_ordr_circle_img"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@color/purple_200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/allordr_ic"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_cart"
+                        app:layout_constraintBottom_toBottomOf="@id/all_ordr_circle_img"
+                        app:layout_constraintEnd_toEndOf="@id/all_ordr_circle_img"
+                        app:layout_constraintStart_toStartOf="@id/all_ordr_circle_img"
+                        app:layout_constraintTop_toTopOf="@id/all_ordr_circle_img"
+                        app:tint="@color/g_white" />
+
+                    <TextView
+                        android:id="@+id/all_rdr_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/andika_new_basic"
+                        android:text="All Orders"
+                        android:textColor="@color/g_black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/all_ordr_circle_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/open_all_ordr_arrow"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/arrow_ic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/track_ordr_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/profile_back"
+                    android:padding="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/track_ordr_circle_img"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@color/g_lightblack"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/track_ic"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="center"
+                        android:src="@drawable/new_search_ic"
+                        app:layout_constraintBottom_toBottomOf="@id/track_ordr_circle_img"
+                        app:layout_constraintEnd_toEndOf="@id/track_ordr_circle_img"
+                        app:layout_constraintStart_toStartOf="@id/track_ordr_circle_img"
+                        app:layout_constraintTop_toTopOf="@id/track_ordr_circle_img"
+                        app:tint="@color/g_white" />
+
+                    <TextView
+                        android:id="@+id/track_ordr_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/andika_new_basic"
+                        android:text="Track Recent Order"
+                        android:textColor="@color/g_black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/track_ordr_circle_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/open_track_ordr_arrow"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/arrow_ic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/billing_adrs_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/profile_back"
+                    android:padding="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/billing_addrs_circle_img"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@color/g_yellow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/billing_adrs_ic"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:padding="2dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_billing"
+                        app:layout_constraintBottom_toBottomOf="@id/billing_addrs_circle_img"
+                        app:layout_constraintEnd_toEndOf="@id/billing_addrs_circle_img"
+                        app:layout_constraintStart_toStartOf="@id/billing_addrs_circle_img"
+                        app:layout_constraintTop_toTopOf="@id/billing_addrs_circle_img"
+                        app:tint="@color/g_white" />
+
+                    <TextView
+                        android:id="@+id/billing_adrs_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/andika_new_basic"
+                        android:text="Billing And Addresses"
+                        android:textColor="@color/g_black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/billing_addrs_circle_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/billing_adrs_arrow"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/arrow_ic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/notification_linear_lay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/orders_linear_lay">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/andika_new_basic"
+                android:text="Notifications"
+                android:textColor="@color/g_black"
+                android:textSize="19sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notification_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/profile_back"
+                android:padding="4dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notification_circle_img"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@color/g_light_green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/notification_ic"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_notifications"
+                    app:layout_constraintBottom_toBottomOf="@id/notification_circle_img"
+                    app:layout_constraintEnd_toEndOf="@id/notification_circle_img"
+                    app:layout_constraintStart_toStartOf="@id/notification_circle_img"
+                    app:layout_constraintTop_toTopOf="@id/notification_circle_img"
+                    app:tint="@color/g_white" />
+
+                <TextView
+                    android:id="@+id/notification_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/andika_new_basic"
+                    android:text="Notifications"
+                    android:textColor="@color/g_black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/notification_circle_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/notification_arrow"
+                    android:layout_width="49dp"
+                    android:layout_height="35dp"
+                    android:checked="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/regional_linear_lay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/notification_linear_lay">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/andika_new_basic"
+                android:text="Regional"
+                android:textColor="@color/g_black"
+                android:textSize="19sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/profile_back"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/language_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/language_circle_img"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@color/purple_500"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/language_ic"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_language"
+                        app:layout_constraintBottom_toBottomOf="@id/language_circle_img"
+                        app:layout_constraintEnd_toEndOf="@id/language_circle_img"
+                        app:layout_constraintStart_toStartOf="@id/language_circle_img"
+                        app:layout_constraintTop_toTopOf="@id/language_circle_img"
+                        app:tint="@color/g_white" />
+
+                    <TextView
+                        android:id="@+id/alanguage_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/andika_new_basic"
+                        android:text="Language"
+                        android:textColor="@color/g_black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/language_circle_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/language_arrow"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/arrow_ic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/logout_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/logout_circle_img"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@color/g_mid_red"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/logout_ic"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_logout"
+                        app:layout_constraintBottom_toBottomOf="@id/logout_circle_img"
+                        app:layout_constraintEnd_toEndOf="@id/logout_circle_img"
+                        app:layout_constraintStart_toStartOf="@id/logout_circle_img"
+                        app:layout_constraintTop_toTopOf="@id/logout_circle_img"
+                        app:tint="@color/g_white" />
+
+                    <TextView
+                        android:id="@+id/logout_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/andika_new_basic"
+                        android:text="Logout"
+                        android:textColor="@color/g_black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/logout_circle_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/logout_arrow"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/arrow_ic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andika_new_basic"
+            android:text="version 1.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/end_guide2"
+            app:layout_constraintStart_toEndOf="@id/start_guide1"
+            app:layout_constraintTop_toBottomOf="@id/regional_linear_lay" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

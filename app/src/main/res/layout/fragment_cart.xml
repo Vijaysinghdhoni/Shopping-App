@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.fragments.shopipingFragments.CartFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/cart_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/cancel_img"
+                    android:layout_width="35dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:contentDescription="@string/cancel_img"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/cancel_ic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/andika_new_basic"
+                    android:text="@string/my_cart"
+                    android:textColor="@color/g_black"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/cancel_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/cart_toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mycart_rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toTopOf="@id/hori_guide"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/cart_toolbar"
+            tools:listitem="@layout/cart_item_layout" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hori_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.77" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/veri_guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/veri_guide2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/total_price_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/totalprice_box_back"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/hori_guide">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/andika_new_basic"
+                android:text="Total"
+                android:textAllCaps="false"
+                android:textColor="@color/g_black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/total_price_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/andika_new_basic"
+                android:textAllCaps="false"
+                android:textColor="@color/g_black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/check_out_bttn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/g_blue"
+            android:fontFamily="@font/andika_new_basic"
+            android:text="Check Out"
+            android:textAllCaps="false"
+            android:textColor="@color/g_white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/total_price_layout" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/emptyCartanimationView"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation" />
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

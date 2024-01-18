@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.shopipingFragments.OrderDetailFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/veri_guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/veri_guide2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/cancel_img"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/cancel_img"
+                android:src="@drawable/cancel_ic" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/andika_new_basic"
+                android:textColor="@color/g_black"
+                android:textSize="26sp"
+                tools:text="Order# 65759478" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearStepView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <com.shuhart.stepview.StepView
+                android:id="@+id/stepView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                app:sv_animationType="Line"
+                app:sv_doneCircleColor="@color/g_yellow"
+                app:sv_doneCircleRadius="14dp"
+                app:sv_doneStepLineColor="@color/g_yellow"
+                app:sv_doneStepMarkColor="@color/g_white"
+                app:sv_doneTextColor="@color/g_gray700"
+                app:sv_nextStepLineColor="@color/g_gray700"
+                app:sv_nextTextColor="@color/g_gray700"
+                app:sv_selectedCircleColor="@color/g_yellow"
+                app:sv_selectedCircleRadius="14dp"
+                app:sv_selectedStepNumberColor="@color/g_blue_gray200"
+                app:sv_selectedTextColor="@color/g_gray700"
+                app:sv_stepLineWidth="3dp"
+                app:sv_stepNumberTextSize="12sp"
+                app:sv_stepPadding="4dp"
+                app:sv_stepViewStyle="@style/StepView" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/g_blue_light"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/linearStepView" />
+
+
+        <LinearLayout
+            android:id="@+id/linear_lay_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/view2">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/shipping"
+                android:src="@drawable/shiping_ic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="2dp"
+                android:text="Address"
+                android:textColor="@color/g_black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/usr_add_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:maxLines="1"
+            android:textColor="@color/g_lightblack"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/linear_lay_2"
+            tools:text="User Full Name" />
+
+        <TextView
+            android:id="@+id/usr_addrs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:textColor="@color/g_lightblack"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/usr_add_name"
+            tools:text="tilkvihar,new Dlhi" />
+
+        <TextView
+            android:id="@+id/usr_phn_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:textColor="@color/g_lightblack"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/usr_addrs"
+            tools:text="0998877654" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/g_blue_light"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/usr_phn_no" />
+
+
+        <LinearLayout
+            android:id="@+id/linear_lay_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/view">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/shipping"
+                android:src="@drawable/ic_bag"
+                app:tint="@color/g_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="2dp"
+                android:text="Products"
+                android:textColor="@color/g_black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/products_rv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@id/veri_guide2"
+            app:layout_constraintStart_toEndOf="@id/veri_guide1"
+            app:layout_constraintTop_toBottomOf="@id/linear_lay_3"
+            tools:listitem="@layout/billing_rv_products_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
