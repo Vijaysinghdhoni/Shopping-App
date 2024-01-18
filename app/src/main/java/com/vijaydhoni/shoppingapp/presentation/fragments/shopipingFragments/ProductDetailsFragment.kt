@@ -19,7 +19,6 @@ import com.vijaydhoni.shoppingapp.databinding.FragmentProductDetailsBinding
 import com.vijaydhoni.shoppingapp.presentation.adapters.ColorRVAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.ProductDetailViewPagerAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.SizesRVAdapter
-import com.vijaydhoni.shoppingapp.presentation.fragments.ProductDetailsFragmentArgs
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.ProductDetailsViewModel
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.ProductDetailsViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint

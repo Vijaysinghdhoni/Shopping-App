@@ -1,14 +1,13 @@
 package com.vijaydhoni.shoppingapp.presentation.fragments.shopipingFragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.vijaydhoni.shoppingapp.OrderDetailFragmentArgs
 import com.vijaydhoni.shoppingapp.data.model.Order
 import com.vijaydhoni.shoppingapp.data.util.OrderStatus
 import com.vijaydhoni.shoppingapp.data.util.VerticalItemdecoration

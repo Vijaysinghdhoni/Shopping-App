@@ -16,7 +16,6 @@ import androidx.navigation.fragment.navArgs
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import com.vijaydhoni.shoppingapp.R
-import com.vijaydhoni.shoppingapp.ViewCategoryFragmentArgs
 import com.vijaydhoni.shoppingapp.data.util.HorizontalItemdecoration
 import com.vijaydhoni.shoppingapp.data.util.VerticalItemdecoration
 import com.vijaydhoni.shoppingapp.data.util.hideBottomNavView
