@@ -8,6 +8,7 @@ This Shopping app, developed in Kotlin, serves as a learning project and showcas
 - **Shopping Cart:** Allows users to add products to their shopping cart, review items, and proceed to checkout, enhancing the overall shopping convenience.
 - **Order Tracking:** Provides users with the ability to track their orders, giving transparency and assurance throughout the purchase process.
 - **Android Paging 3 Library:** Implements Android Paging 3 for efficient and optimized data loading, enabling smooth scrolling and a responsive user interface, especially when dealing with large datasets.
+- **New Android Splash screen Api :** Implements Android new splash screen api for beautiful splash screen.
 
 # Preview
 ![MergedImages (1)](https://github.com/Vijaysinghdhoni/Shopping-App/assets/142734066/03f5d647-9215-43f0-8a24-4fc0d86a33c8)
