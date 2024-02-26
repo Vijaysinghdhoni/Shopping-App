@@ -14,6 +14,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -23,7 +24,6 @@ import com.vijaydhoni.shoppingapp.data.util.Resource
 import com.vijaydhoni.shoppingapp.data.util.hideBottomNavView
 import com.vijaydhoni.shoppingapp.databinding.FragmentUserAccountBinding
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.UserAccountViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.UserAccountViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -31,12 +31,9 @@ import javax.inject.Inject
 class UserAccountFragment : Fragment() {
 
     private lateinit var binding: FragmentUserAccountBinding
-    private lateinit var viewModel: UserAccountViewModel
+    private  val viewModel: UserAccountViewModel by viewModels()
     private var imageUri: Uri? = null
     private lateinit var pickMedia: ActivityResultLauncher<PickVisualMediaRequest>
-
-    @Inject
-    lateinit var viewModelFactory: UserAccountViewModelFactory
 
 
     override fun onCreateView(
@@ -49,10 +46,6 @@ class UserAccountFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(
-            requireActivity(),
-            viewModelFactory
-        )[UserAccountViewModel::class.java]
         hideBottomNavView()
         viewModel.getUser()
         pickMedia =

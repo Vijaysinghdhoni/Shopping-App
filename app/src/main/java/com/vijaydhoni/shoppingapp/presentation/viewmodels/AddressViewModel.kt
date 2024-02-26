@@ -11,9 +11,12 @@ import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.AddUserAddres
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.DeleteUserAddressUSeCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetCurrentAddressFromUserAddressesUseCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.UpdateUserAddressUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AddressViewModel(
+@HiltViewModel
+class AddressViewModel @Inject constructor(
     private val addUserAddressUseCase: AddUserAddressUseCase,
     private val getCurrentAddressFromUserAddressesUseCase: GetCurrentAddressFromUserAddressesUseCase,
     private val updateUserAddressUseCase: UpdateUserAddressUseCase,

@@ -10,9 +10,12 @@ import com.vijaydhoni.shoppingapp.data.util.Event
 import com.vijaydhoni.shoppingapp.data.util.Resource
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetUserAddressesUseCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.PlaceOrderUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class BillingViewmodel(
+@HiltViewModel
+class BillingViewmodel @Inject constructor(
     private val getUserAddressesUseCase: GetUserAddressesUseCase,
     private val placeOrderUseCase: PlaceOrderUseCase
 ) : ViewModel() {

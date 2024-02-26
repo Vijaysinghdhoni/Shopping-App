@@ -7,9 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.vijaydhoni.shoppingapp.data.model.Order
 import com.vijaydhoni.shoppingapp.data.util.Resource
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetAllOrdersUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AllOrdersViewModel(
+@HiltViewModel
+class AllOrdersViewModel @Inject constructor(
     private val getAllOrdersUseCase: GetAllOrdersUseCase
 ) : ViewModel() {
 
@@ -20,7 +23,7 @@ class AllOrdersViewModel(
         getAllOrders()
     }
 
-     fun getAllOrders() {
+    fun getAllOrders() {
         viewModelScope.launch {
             _allOrders.postValue(Resource.Loading())
             val allorders = getAllOrdersUseCase.execute()

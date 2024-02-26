@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.vijaydhoni.shoppingapp.R
@@ -20,7 +21,7 @@ import com.vijaydhoni.shoppingapp.presentation.viewmodels.UserAuthenticationView
 
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
-    private lateinit var userAuthenticationViewmodel: UserAuthenticationViewmodel
+    private val userAuthenticationViewmodel: UserAuthenticationViewmodel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +32,6 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        userAuthenticationViewmodel = (activity as UserAuthActivity).userAuthenticationViewmodel
         setStatusBarColour(activity as? AppCompatActivity, R.color.g_yellow)
         binding.alrdyAccLogin.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)

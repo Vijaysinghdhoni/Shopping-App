@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,9 +20,7 @@ import com.vijaydhoni.shoppingapp.presentation.adapters.ColorRVAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.ProductDetailViewPagerAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.SizesRVAdapter
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.ProductDetailsViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.ProductDetailsViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class ProductDetailsFragment : Fragment() {
@@ -32,11 +30,7 @@ class ProductDetailsFragment : Fragment() {
     private lateinit var imageAdapter: ProductDetailViewPagerAdapter
     private var selectedColor: Int? = null
     private var selectedSizes: String? = null
-    private lateinit var productDetailsViewModel: ProductDetailsViewModel
-
-    @Inject
-    lateinit var productDetailsViewModelFactory: ProductDetailsViewModelFactory
-
+    private val productDetailsViewModel: ProductDetailsViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,12 +44,6 @@ class ProductDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val args: ProductDetailsFragmentArgs by navArgs()
         val product = args.product
-        productDetailsViewModel =
-            ViewModelProvider(
-                requireActivity(),
-                productDetailsViewModelFactory
-            )[ProductDetailsViewModel::class.java]
-
         setupViewpagerAdater()
         setupcolorRvAdapter()
         setupsizeRvAdapter()

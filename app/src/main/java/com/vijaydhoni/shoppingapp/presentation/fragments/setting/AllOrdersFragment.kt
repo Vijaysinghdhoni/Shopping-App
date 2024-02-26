@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,24 +17,18 @@ import com.vijaydhoni.shoppingapp.data.util.hideBottomNavView
 import com.vijaydhoni.shoppingapp.databinding.FragmentAllOrdersBinding
 import com.vijaydhoni.shoppingapp.presentation.adapters.AllOrdersRvAdapter
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.AllOrdersViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.AllOrdersViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class AllOrdersFragment : Fragment() {
     private lateinit var binding: FragmentAllOrdersBinding
-    private lateinit var viewModel: AllOrdersViewModel
+    private  val viewModel: AllOrdersViewModel by viewModels()
     private lateinit var allOrderadapter: AllOrdersRvAdapter
 
-    @Inject
-    lateinit var viewModelFactory: AllOrdersViewModelFactory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(
-            requireActivity(),
-            viewModelFactory
-        )[AllOrdersViewModel::class.java]
         hideBottomNavView()
     }
 

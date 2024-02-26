@@ -9,9 +9,12 @@ import com.vijaydhoni.shoppingapp.data.util.Event
 import com.vijaydhoni.shoppingapp.data.util.Resource
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.BestProductsPagingSourceUSeCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetSearchedProductUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SearchViewModel(
+@HiltViewModel
+class SearchViewModel @Inject constructor (
     private val getSearchedProductUsecase: GetSearchedProductUseCase
 ) :
     ViewModel() {

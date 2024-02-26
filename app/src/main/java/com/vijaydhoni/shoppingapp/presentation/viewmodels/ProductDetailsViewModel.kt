@@ -10,10 +10,13 @@ import com.vijaydhoni.shoppingapp.data.util.Resource
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.AddNewProductToCartUseCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetCurrentProductFromUserCart
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.IncreaseQuantityOfProductInCartUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProductDetailsViewModel(
+@HiltViewModel
+class ProductDetailsViewModel @Inject constructor(
     private val getCurrentProductFromUserCart: GetCurrentProductFromUserCart,
     private val addNewProductToCartUseCase: AddNewProductToCartUseCase,
     private val increaseProductQuantityUseCase: IncreaseQuantityOfProductInCartUseCase

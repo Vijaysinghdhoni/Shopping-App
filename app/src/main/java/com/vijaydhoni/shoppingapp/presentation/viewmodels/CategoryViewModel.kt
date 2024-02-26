@@ -4,8 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.*
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CategoryViewModel(
+@HiltViewModel
+class CategoryViewModel @Inject constructor(
     getAccessoriesProductsUseCase: GetAccessoriesProductsUseCase,
     getFootWearProductsUseCase: GetFootWearProductsUseCase,
     getMensProductsUseCase: GetMensProductsUseCase,

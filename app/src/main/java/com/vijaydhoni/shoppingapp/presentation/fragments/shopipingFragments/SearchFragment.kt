@@ -10,7 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,12 +22,10 @@ import com.vijaydhoni.shoppingapp.databinding.FragmentSearchBinding
 import com.vijaydhoni.shoppingapp.presentation.adapters.SearchCategoryRvAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.SearchRvAdapter
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.SearchViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.SearchViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
@@ -36,19 +34,11 @@ class SearchFragment : Fragment() {
         SearchCategoryRvAdapter()
     }
 
-    @Inject
-    lateinit var searchViewModelFactory: SearchViewModelFactory
-
     private val searchRvAdapter by lazy {
         SearchRvAdapter()
     }
 
-    private val searchViewModel by lazy {
-        ViewModelProvider(
-            requireActivity(),
-            searchViewModelFactory
-        )[SearchViewModel::class.java]
-    }
+    private val searchViewModel: SearchViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

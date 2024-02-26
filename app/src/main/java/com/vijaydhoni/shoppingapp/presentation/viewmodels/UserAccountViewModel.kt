@@ -16,11 +16,14 @@ import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetUserUseCas
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.SaveUserInfoUSeCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.SaveUserProfileImgUseCase
 import com.vijaydhoni.shoppingapp.presentation.ShoppingApplication
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.ByteArrayOutputStream
+import javax.inject.Inject
 
-class UserAccountViewModel(
+@HiltViewModel
+class UserAccountViewModel @Inject constructor (
     private val getUserUseCase: GetUserUseCase,
     private val saveUserInfoUSeCase: SaveUserInfoUSeCase,
     private val saveUserProfileImgUseCase: SaveUserProfileImgUseCase,

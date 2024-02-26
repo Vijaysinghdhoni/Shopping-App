@@ -22,12 +22,15 @@ import com.vijaydhoni.shoppingapp.domain.usecases.userAuthUsecases.GetCurrentUse
 import com.vijaydhoni.shoppingapp.domain.usecases.userAuthUsecases.LoginUseCase
 import com.vijaydhoni.shoppingapp.domain.usecases.userAuthUsecases.SendPasswordResetUseCase
 import com.vijaydhoni.shoppingapp.domain.usecases.userAuthUsecases.SignUpUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UserAuthenticationViewmodel(
+@HiltViewModel
+class UserAuthenticationViewmodel @Inject constructor(
     private val loginUseCase: LoginUseCase,
     private val app: Application,
     private val signUpUseCase: SignUpUseCase,

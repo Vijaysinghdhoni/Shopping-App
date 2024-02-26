@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
@@ -25,11 +25,9 @@ import com.vijaydhoni.shoppingapp.presentation.adapters.BestDealsAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.BestProductsAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.SpecialProductAdapter
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.MainCategoryViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.MainCategoryViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -40,19 +38,11 @@ class HomeFragment : Fragment() {
     private val bestProductsAdapter: BestProductsAdapter by lazy {
         BestProductsAdapter()
     }
-    private val mainCategoryViewModel: MainCategoryViewModel by lazy {
-        ViewModelProvider(
-            requireActivity(),
-            mainCategoryViewModelFactory
-        )[MainCategoryViewModel::class.java]
-    }
+    private val mainCategoryViewModel: MainCategoryViewModel by viewModels()
     private val specialProductAdapter: SpecialProductAdapter by lazy {
         SpecialProductAdapter()
     }
 
-
-    @Inject
-    lateinit var mainCategoryViewModelFactory: MainCategoryViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

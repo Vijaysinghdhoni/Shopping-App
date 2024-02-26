@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,25 +21,14 @@ import com.vijaydhoni.shoppingapp.data.util.showBottomNavView
 import com.vijaydhoni.shoppingapp.databinding.FragmentProfileBinding
 import com.vijaydhoni.shoppingapp.presentation.activities.UserAuthActivity
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.ProfileFragmentViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.ProfileFragmentViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
-    private lateinit var profileFragmentViewModel: ProfileFragmentViewModel
+    private  val profileFragmentViewModel: ProfileFragmentViewModel by viewModels()
 
-    @Inject
-    lateinit var profileFragmentViewModelFactory: ProfileFragmentViewModelFactory
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        profileFragmentViewModel = ViewModelProvider(
-            requireActivity(),
-            profileFragmentViewModelFactory
-        )[ProfileFragmentViewModel::class.java]
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

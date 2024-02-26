@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,31 +22,23 @@ import com.vijaydhoni.shoppingapp.data.util.hideBottomNavView
 import com.vijaydhoni.shoppingapp.databinding.FragmentBillingBinding
 import com.vijaydhoni.shoppingapp.presentation.adapters.BillingAddressPickRvAdapter
 import com.vijaydhoni.shoppingapp.presentation.adapters.BillingProductsRvAdapter
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.BillingViewModelFactory
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.BillingViewmodel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class BillingFragment : Fragment() {
     private lateinit var binding: FragmentBillingBinding
-    private lateinit var billingViewmodel: BillingViewmodel
+    private val billingViewmodel: BillingViewmodel by viewModels()
     private lateinit var billingAddressPickRvAdapter: BillingAddressPickRvAdapter
     private lateinit var billingProductsRvAdapter: BillingProductsRvAdapter
     private var selectedAddress: Address? = null
     private var totalPrice: Float? = null
     private lateinit var userCartProducts: UserCartProductsList
 
-    @Inject
-    lateinit var billingViewModelFactory: BillingViewModelFactory
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         hideBottomNavView()
-        billingViewmodel = ViewModelProvider(
-            requireActivity(), billingViewModelFactory
-        )[BillingViewmodel::class.java]
     }
 
     override fun onCreateView(
@@ -67,7 +59,7 @@ class BillingFragment : Fragment() {
 
 
         if (!args.payment) {
-         //   Toast.makeText(requireContext(), "from user Profile", Toast.LENGTH_SHORT).show()
+            //   Toast.makeText(requireContext(), "from user Profile", Toast.LENGTH_SHORT).show()
             binding.totalPriceLayout.visibility = View.INVISIBLE
             binding.placeOrderBttn.visibility = View.INVISIBLE
             binding.viewBtmOfRvProducts.visibility = View.INVISIBLE

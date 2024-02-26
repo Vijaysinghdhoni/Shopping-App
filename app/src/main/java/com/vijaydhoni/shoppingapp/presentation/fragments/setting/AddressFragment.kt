@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.vijaydhoni.shoppingapp.data.model.Address
@@ -14,17 +14,12 @@ import com.vijaydhoni.shoppingapp.data.util.Resource
 import com.vijaydhoni.shoppingapp.data.util.hideBottomNavView
 import com.vijaydhoni.shoppingapp.databinding.FragmentAddressBinding
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.AddressViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.AddressViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class AddressFragment : Fragment() {
     private lateinit var binding: FragmentAddressBinding
-    private lateinit var addressViewModel: AddressViewModel
-
-    @Inject
-    lateinit var addressViewModelFactory: AddressViewModelFactory
+    private val addressViewModel: AddressViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,11 +36,6 @@ class AddressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        addressViewModel = ViewModelProvider(
-            requireActivity(),
-            addressViewModelFactory
-        )[AddressViewModel::class.java]
-
         val args by navArgs<AddressFragmentArgs>()
 
         val address = args.selectedAddress

@@ -27,7 +27,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
+
 class CartFragment : Fragment() {
 
     private lateinit var binding: FragmentCartBinding

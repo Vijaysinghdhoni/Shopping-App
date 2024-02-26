@@ -11,9 +11,12 @@ import com.vijaydhoni.shoppingapp.data.util.Resource
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetRecentOrderUseCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.GetUserUseCase
 import com.vijaydhoni.shoppingapp.domain.usecases.shoppingUsecases.LogoutUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ProfileFragmentViewModel(
+@HiltViewModel
+class ProfileFragmentViewModel @Inject constructor(
     private val getUserUseCase: GetUserUseCase,
     private val logoutUseCase: LogoutUseCase,
     private val getRecentOrderUseCase: GetRecentOrderUseCase

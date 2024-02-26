@@ -2,11 +2,11 @@ package com.vijaydhoni.shoppingapp.presentation.activities
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import com.vijaydhoni.shoppingapp.databinding.ActivityUserAuthBinding
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.UserAuthenticationViewModelFactory
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.UserAuthenticationViewmodel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -15,14 +15,7 @@ import javax.inject.Inject
 class UserAuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserAuthBinding
 
-    @Inject
-    lateinit var userAuthenticationViewModelFactory: UserAuthenticationViewModelFactory
-    val userAuthenticationViewmodel: UserAuthenticationViewmodel by lazy {
-        ViewModelProvider(
-            this,
-            userAuthenticationViewModelFactory
-        )[UserAuthenticationViewmodel::class.java]
-    }
+    private val userAuthenticationViewmodel: UserAuthenticationViewmodel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

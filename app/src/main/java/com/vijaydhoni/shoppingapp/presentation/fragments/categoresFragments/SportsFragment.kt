@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -21,7 +22,6 @@ import com.vijaydhoni.shoppingapp.data.util.showBottomNavView
 import com.vijaydhoni.shoppingapp.databinding.FragmentSportsBinding
 import com.vijaydhoni.shoppingapp.presentation.adapters.BestProductsAdapter
 import com.vijaydhoni.shoppingapp.presentation.viewmodels.CategoryViewModel
-import com.vijaydhoni.shoppingapp.presentation.viewmodels.CategoryViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -36,15 +36,7 @@ class SportsFragment : Fragment() {
         BestProductsAdapter()
     }
 
-    @Inject
-    lateinit var categoryViewModelFactory: CategoryViewModelFactory
-
-    private val categoryViewmodel: CategoryViewModel by lazy {
-        ViewModelProvider(
-            requireActivity(),
-            categoryViewModelFactory
-        )[CategoryViewModel::class.java]
-    }
+    private val categoryViewmodel: CategoryViewModel by viewModels()
 
 
     override fun onCreateView(
